@@ -48,12 +48,16 @@ class task_1_3:
         # >>>>>>>>>>>>>>> YOUR CODE HERE <<<<<<<<<<<<<<<
         # TODO: YOUR CODE HERE
         # >>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<
+        t = np.arange(0, 2, 1/self.fs)
+        m_t = np.cos(2 * np.pi * fm * t)
+        c_t = np.cos(2 * np.pi * fc * t + phase)
+        s_t = Ac * (1 + mu * m_t) * c_t
         
         # Ensure all arrays are of type float
-        t = np.array(t).astype(float)
-        m_t = np.array(m_t).astype(float)
-        c_t = np.array(c_t).astype(float)
-        s_t = np.array(s_t).astype(float)
+        # t = np.array(t).astype(float)
+        # m_t = np.array(m_t).astype(float)
+        # c_t = np.array(c_t).astype(float)
+        # s_t = np.array(s_t).astype(float)
 
         return t, m_t, c_t, s_t
     

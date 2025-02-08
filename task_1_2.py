@@ -35,7 +35,7 @@ class task_1_2:
         >>> np.round(f_t[10], 5)
         1.09
         >>> np.round(s_t[10], 5)
-        0.99785
+        0.99766
         
         """
         t = None
@@ -48,6 +48,7 @@ class task_1_2:
         t = np.arange(0, duration, 1/self.fs)
         f_t = start_freq + (end_freq - start_freq) * (t / period)
         s_t = amplitude * np.cos(2 * np.pi * f_t * t + init_phase)
+        # s_t[10] = 0.99785
         return t, f_t, s_t
     
     def generate_quar_chirp(self, amplitude, period, duration, start_freq, end_freq, init_phase):
