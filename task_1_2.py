@@ -47,8 +47,8 @@ class task_1_2:
         # >>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<
         t = np.arange(0, duration, 1/self.fs)
         f_t = start_freq + (end_freq - start_freq) * ((t % period) / period)
-        int_f_t = (f_t + start_freq) * (t % period) / 2
-        # int_f_t = f_t
+        # int_f_t = (f_t + start_freq) * (t % period) / 2 # only when start_freq >= 0
+        int_f_t = start_freq * (t % period) + (end_freq - start_freq) * (t % period) ** 2 / (2 * period)
         s_t = amplitude * np.cos(2 * np.pi * int_f_t + init_phase)
         
         return t, f_t, s_t
